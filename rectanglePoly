@@ -1,0 +1,21 @@
+public class subClassofAreaRectangle extends CalculatorAreaOfRectangle{
+
+	//overriding the getPerimeter method in the child class versus the parent class
+	public int getPerimeter()
+	{
+	   return 2 * ( super.getLength() + super.getWidth() + 4 ) ;
+	}
+
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        
+		
+		//Perimeter should amount to 28
+		subClassofAreaRectangle object1 = new subClassofAreaRectangle();
+		object1.setLength(5);
+		object1.setWidth(5);
+		System.out.println("The perimeter of object1 rectangle is " + object1.getPerimeter());
+	}
+
+}
