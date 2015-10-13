@@ -1,0 +1,114 @@
+echo # Polymorphism >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/jkirkish/Polymorphism.git
+git push -u origin master
+public class CalculatorAreaOfRectangle {
+
+      	int length, width;
+	/**
+		 * @return the length
+		 */
+		public int getLength() {
+			return length;
+		}
+		/**
+		 * @param length the length to set
+		 */
+		public void setLength(int length) {
+			this.length = length;
+		}
+		/**
+		 * @return the width
+		 */
+		public int getWidth() {
+			return width;
+		}
+		/**
+		 * @param width the width to set
+		 */
+		public void setWidth(int width) {
+			this.width = width;
+		}
+	//demonstrates overriding with an int
+	public void RectArea(int length, int width) {
+
+		int area = length * width;
+		System.out.println("Area of an int rectangle is:" + area);
+	}
+	//demonstrates overriding with an double
+	public void RectArea(double length, double width) {
+
+		double area = length * width;
+		System.out.println("Area of a double rectangle is:" + area);
+	}
+	//demonstrates overriding with an short
+	public void RectArea(short length, short width) {
+          
+		int area = length * width;
+		System.out.println("Area of a short rectangle is:" + area);
+	}//demonstrates overriding with an float
+	public void RectArea(float length, float width) {
+
+		float area = length * width;
+		System.out.println("Area of a float rectangle is:" + area);
+	}
+	
+	//get the perimeter
+	public int getPerimeter()
+	{
+	   return 2 * ( length + width ) ;
+	}
+
+	
+	public static void main(String[] args) {
+		
+		//Area of a rectangle is length * width 
+		//Area = length * width
+		
+		//class object
+	CalculatorAreaOfRectangle Rect1 = new CalculatorAreaOfRectangle();	
+	
+	//overloaded methods demonstrated
+	Rect1.RectArea(5.0, 5.0);
+	Rect1.RectArea(5.0f,5.0f);
+	Rect1.RectArea(5, 5);
+	Rect1.RectArea(5, 5);
+	Rect1.setLength(5);
+	Rect1.setWidth(5);
+	System.out.println("The perimeter of rectangle is " + Rect1.getPerimeter());	
+		//1)What is polymorphism?
+		//Polymorphism enables you to "program in the general" rather than "program in the specific"    
+		//A program is able to write programs that process objects that share the same superclass as if
+		//they're all objects of the superclass; this can simplify programming
+		//Polymorphism means many(poly) and shapes (morph). In Java, you multiple methods with the same name 
+		//in the same class
+		
+		//2)What are two types of polymorphism?
+		 //Overloading-Two or more methods with different signatures
+		// overriding-replacing an inherited method with another having the same signature
+		
+		
+		//3)What are restriction for overridding?
+		
+		/*Using an incorrect method isigature when attempting to overrride a superclass methods causes 
+		 * an unintentional method overload that can lead to sublte logic errors
+		 * Declare overriden methods with the @Override annotation to ensure at compilation time that you defined their 
+		 * their signatures correctly.  It's always better to find errors at compile time rather than at runtime.
+		 * 
+		 * It's a syntax error to override a method with a more restricted access modifier- a public method of the superclass cannot become a
+		 * protected or private method in the subclass. A public method remains public for all that class's direct and indirect subclasses
+		 */
+		
+		//4)Write a program to calculate area of rectangle using int, double short, float 
+		//use concept of overloading?
+		    //See overloading in this class with the different Rect1.RectArea(); methods
+	
+	
+		//5)Write a program to override the features of grand parent?
+            //see what the subClassOfAreaRectangle is
+		
+	}
+
+}
